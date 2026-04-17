@@ -1,0 +1,53 @@
+@import "@styles/variables";
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include response("desktop-medium") {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.blockStars {
+  margin: 7px 0px;
+  padding: 11px 26px;
+  border-radius: 70px;
+  background-color: $color-base;
+
+  @include response("desktop-medium") {
+    margin: 0px;
+    padding: 15px 5px;
+  }
+
+  @include response("tablet"){
+    padding:11px 1px;
+  }
+  
+  & > div {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+.blockRating {
+  position: relative;
+  @include font-line(30px);
+  color: $golden;
+  font-weight: 700;
+  margin-right: 15px;
+  letter-spacing: -8%;
+
+  img {
+    position: absolute;
+    transform: translate(0px, -50%);
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+  }
+}

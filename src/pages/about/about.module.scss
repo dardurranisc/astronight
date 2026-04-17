@@ -1,0 +1,146 @@
+@import "../../styles/breakpoints";
+@import "../../styles/mixins/visual";
+
+.information {
+  margin-top: 170px;
+
+  @include response("desktop") {
+    margin-top: 140px;
+  }
+
+  @include response("tablet") {
+    margin-top: 60px;
+  }
+}
+
+.informationLists {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  @include response("desktop") {
+    gap: 70px;
+  }
+
+  @include response("tablet") {
+    gap: 40px;
+  }
+}
+
+.block {
+  padding: 160px 12.5px;
+
+  @include response("tablet") {
+    padding: 50px 0;
+  }
+}
+
+.heading h1 {
+  @include font-line(19.16666666666667vw);
+  text-transform: uppercase;
+  text-align: center;
+
+  @include response("wide") {
+    @include font-line(26.3671875vw);
+  }
+
+  @include response("tablet") {
+    @include font-line(108px);
+  }
+
+  @include response("mobile") {
+    @include font-line(28.8vw);
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+
+  @include response("tablet") {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 382px;
+
+  @include response("desktop-medium") {
+    width: 100%;
+    max-width: 345px;
+    margin: 0 auto;
+  }
+
+  @include response("tablet") {
+    gap: 10px;
+  }
+}
+
+.title {
+  font-size: 44px;
+  line-height: 37px;
+
+  @include response("desktop") {
+    font-size: 4.296875vw;
+    line-height: 3.61328125vw;
+  }
+
+  @include response("tablet") {
+    @include font-line(26px);
+  }
+}
+
+.text {
+  font-size: 20px;
+  line-height: 30px;
+
+  @include response("desktop") {
+    font-size: 1.953125vw;
+    line-height: 2.9296875vw;
+  }
+
+  @include response("tablet") {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.center {
+  width: 602px;
+  text-align: center;
+
+  @include response("tablet") {
+    width: 100%;
+  }
+}
+
+.center .text {
+  width: 382px;
+  margin: 0 auto;
+
+  @include response("tablet") {
+    width: 100%;
+  }
+}
+
+.right {
+  text-align: end;
+
+  @include response("tablet") {
+    text-align: center;
+  }
+}
+
+.left {
+  text-align: start;
+
+  @include response("tablet") {
+    text-align: center;
+  }
+}

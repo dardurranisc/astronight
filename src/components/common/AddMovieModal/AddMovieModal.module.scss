@@ -1,0 +1,101 @@
+@import "@styles/breakpoints";
+@import "@styles/variables";
+@import "@styles/mixins/visual";
+
+.overlay {
+  @include overlay(1200, 0.8);
+  overflow-y: scroll;
+}
+
+.modal {
+  position: relative;
+  margin: 100px 0;
+  padding: 30px 50px;
+  border: 2px solid;
+  @include border-radius-base;
+
+  @include response("wide") {
+    padding: 15px 15px 34px 15px;
+  }
+  
+  @include response('tablet'){
+    margin:0;
+  }
+}
+
+.headerModal {
+  position: relative;
+}
+
+.header .title {
+  font-family: "Alata";
+  font-size: 44px;
+  line-height: 37px;
+}
+
+.btnClose {
+  @include close-btn(30px, 2px);
+}
+
+.form {
+  @include flex-col-center(40px);
+  margin-top: 73px;
+
+  @include response("wide") {
+    margin-top: 28px;
+  }
+}
+
+.form .formGrid {
+  display: grid;
+  grid-template-columns: 1.3423fr 2fr;
+  gap: 80px;
+  width: 100%;
+
+  @include response("wide") {
+    grid-template-columns: 280px 1fr;
+    gap: 61px;
+  }
+
+  @include response("desktop-medium") {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 30px;
+
+  @include response("tablet") {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.fieldsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-right: 20px;
+  padding-bottom: 4px;
+  color: $color-base;
+
+  @include response("desktop") {
+    gap: 15px;
+  }
+
+  @include response("tablet"){
+    margin-right:0;
+  }
+}
+
+.fieldsSection .field {
+  position: relative;
+  width: 100%;
+}
+
+.errorMessage {
+  @include error-message;
+}
+

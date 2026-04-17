@@ -1,0 +1,13 @@
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.heading {
+  @include heading-font-line;
+  text-align: center;
+}
+
+.mobileLeft {
+  @include response("tablet-medium") {
+    text-align: unset;
+  }
+}

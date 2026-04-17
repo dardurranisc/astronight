@@ -1,0 +1,51 @@
+@import "@styles/variables";
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding-top: 13.3854vw;
+
+  @include response("desktop") {
+    padding-top: 14.6484vw;
+  }
+
+  @include response("tablet-medium") {
+    padding-top: 55px;
+  }
+}
+
+.films {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5987vw 1.039vw;
+  margin-top: 5.2083vw;
+
+  @include response("desktop") {
+    margin-top: 8.8867vw;
+    gap: 4.8828125vw 1.953125vw;
+  }
+
+  @include response("tablet-medium") {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5.33vw 4vw;
+    margin-top: 10.13vw;
+  }
+}
+
+.button {
+  align-self: center;
+  font-family: "Alata";
+  margin: 100px 0px;
+  @include font-line(42px);
+  
+  &:hover {
+    color: $maron;
+  }
+
+  @include response("tablet-medium") {
+    margin: 30px 0px 55px;
+    @include font-line(26px);
+  }
+}

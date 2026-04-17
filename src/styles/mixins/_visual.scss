@@ -1,0 +1,129 @@
+@import "../variables";
+@import "../breakpoints";
+
+@mixin flex-col-center($gap: null) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin cursor {
+  cursor: pointer;
+}
+
+@mixin font-line($size: 24px) {
+  font-size: $size;
+  line-height: $size;
+}
+
+@mixin border-radius-base {
+  border-radius: 10px;
+}
+
+@mixin border-radius-round {
+  border-radius: 50%;
+}
+
+@mixin heading-font-line {
+  font-family: "Alata";
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+
+  @include response("desktop") {
+    font-size: 44px;
+    line-height: 44px;
+  }
+
+  @include response("tablet-medium") {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
+@mixin field-base {
+  font-family: "Anonymous Pro";
+  font-size: 24px;
+  line-height: 24px;
+  width: 100%;
+  padding: 19px 10px;
+  background-color: transparent;
+  border: 2px solid $color-base;
+  color: $color-base;
+  @include border-radius-base;
+
+  &::placeholder {
+    color: $color-secondary;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin field-error {
+  border-color: $golden;
+  color: $golden;
+
+  &::placeholder {
+    color: $golden;
+  }
+}
+
+@mixin error-message {
+  position: absolute;
+  bottom: -5px;
+  left: 10px;
+  transform: translateY(100%);
+  font-size: 12px;
+  line-height: 12px;
+  color: $golden;
+
+  @include response ("desktop-medium"){
+    bottom: -3px;
+    font-size: 8px;
+    line-height: 8px;
+  }
+}
+
+@mixin overlay($z-index: 1000, $opacity: 0.9) {
+  position: fixed;
+  z-index: $z-index;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $dark-sky-bg;
+  opacity: $opacity;
+}
+
+@mixin close-btn($size: 30px, $line-height: 2px) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $size;
+  height: $size;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $line-height;
+    background-color: $color-base;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(135deg);
+  }
+}

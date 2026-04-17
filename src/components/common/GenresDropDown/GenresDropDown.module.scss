@@ -1,0 +1,80 @@
+@import "@styles/variables";
+@import "@styles/mixins/visual";
+
+.block {
+  @include field-base;
+  color: $maron;
+}
+
+.blockOpen {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+.blockHeader {
+  position: relative;
+}
+
+.selectDown {
+  border: 2px solid;
+  @include border-radius-base;
+  margin-top: 50px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  left: 0;
+  border-top: none;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  background-color: $dark-sky-bg;
+  opacity: 0.9;
+  z-index: 1;
+  padding: 0px 10px;
+  color: $maron;
+  border-color: $color-base;
+}
+
+.selectLists {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.selectList {
+  position: relative;
+  display: flex;
+  padding: 8px 0px;
+
+  img {
+    @include center-y;
+    right: 0px;
+  }
+
+  &.selected {
+    color: $color-base;
+  }
+}
+
+.listCheckbox {
+  opacity: 0;
+}
+
+.arrow {
+  @include center-y;
+  right: 0px;
+}
+
+.errorBlock {
+  border: 2px solid $golden;
+}
+
+.placeholderError {
+  color: $golden;
+}
+
+.arrowError {
+  filter: brightness(0) saturate(100%) invert(62%) sepia(100%) saturate(343%)
+    hue-rotate(346deg) brightness(101%) contrast(103%) !important;
+}

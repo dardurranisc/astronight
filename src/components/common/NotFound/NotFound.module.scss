@@ -1,0 +1,57 @@
+@import "@styles/variables";
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap:100px;
+    margin-top:58px;
+
+    @include response('desktop'){
+        gap: 49px;
+        margin-top: 34px;
+        padding: 0 4.443359375vw;
+    }
+
+    @include response("tablet"){
+        gap: 52px;
+        margin-top: 144px;
+        padding:0;
+    }
+}
+
+.block h1 {
+    align-self: baseline;
+
+    @include response('desktop'){
+        align-self: auto;
+    }
+}
+
+.span {
+  display: block;
+  width:100%;
+  max-width:789px;
+  text-align: center;
+  font-size: 404px;
+  line-height: 374px;
+  letter-spacing:15%;
+
+  @include response('desktop'){
+    font-size: 39.453125vw;
+    line-height: 36.5234375vw;
+  }
+
+  @include response('tablet'){
+    font-size:196px;
+    line-height:200px;
+    letter-spacing: 5%;
+  }
+
+  @include response('mobile'){
+    font-size:52.26666666666667vw;
+    line-height:53.33333333333333vw;
+  }
+}

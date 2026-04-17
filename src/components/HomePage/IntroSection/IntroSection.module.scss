@@ -1,0 +1,36 @@
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.main {
+  padding: 252px 63px;
+
+  @include response("desktop") {
+    padding: 169px 0;
+  }
+}
+
+.blockParagraphs {
+  @include flex-col-center(50px);
+  text-align: center;
+  margin-top: 50px;
+
+  @include response("tablet-medium") {
+    gap: 30px;
+    margin-top: 30px;
+  }
+}
+
+.blockParagraphs p {
+  line-height: 37px;
+
+  @include response("desktop") {
+    line-height: 30px;
+    font-size: 20px;
+    padding: 0px 3.3px;
+  }
+
+  @include response("tablet-medium") {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

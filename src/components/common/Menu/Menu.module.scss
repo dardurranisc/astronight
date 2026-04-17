@@ -1,0 +1,62 @@
+@import "@styles/variables";
+@import "@styles/breakpoints";
+
+.nav {
+  flex: 1;
+
+  @include response("desktop-medium") {
+    display: none;
+  }
+}
+
+.menu {
+  display: flex;
+}
+
+.mobileNav {
+  display: flex;
+  align-items: center;
+}
+
+.desktopMenu {
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 1;
+  gap: 60px;
+  margin-right: 105px;
+
+  @include response("desktop") {
+    margin-right: 164px;
+  }
+
+  @include response("desktop-medium") {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  display: none;
+
+  @include response("desktop-medium") {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+  }
+}
+
+.menuItem{
+  color: $color-secondary;
+
+  &:hover {
+    color: $color-base;
+  }
+
+  &:focus {
+    color: $color-base;
+  }
+}
+
+
+.currentActive {
+  color:$color-base;
+}

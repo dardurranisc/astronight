@@ -1,0 +1,54 @@
+@import "@styles/variables";
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.footer {
+  padding: 25px 0px;
+  color: $color-secondary;
+  background-color:$dark-sky-bg;
+
+  @include response("desktop") {
+    padding: 20px 0;
+  }
+
+  @include response("tablet-medium") {
+    padding: 15px 0px;
+  }
+}
+
+.copyright {
+  @include flex-col-center(20px);
+  line-height: 37px;
+
+  @include response("desktop") {
+    @include font-line(22px);
+    gap: 15px;
+  }
+
+  @include response("tablet-medium") {
+    gap: 10px;
+    @include font-line(20px);
+  }
+
+  span {
+    letter-spacing: 10%;
+    @include font-line(14px);
+
+    @include response("desktop") {
+      @include font-line(13px);
+    }
+
+    @include response("tablet-medium") {
+      @include font-line(12px);
+      letter-spacing: 0;
+    }
+  }
+}
+
+.footer p {
+  line-height: 24px;
+
+  @include response("tablet-medium") {
+    @include font-line(20px);
+  }
+}

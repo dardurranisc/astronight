@@ -1,0 +1,17 @@
+@import "@styles/variables";
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.main {
+  @include flex-col-center(60px);
+  padding: 461px 0 436px;
+
+  @include response("desktop") {
+    padding: 230.68px 0 180.28px 0px;
+  }
+
+  @include response("tablet-medium") {
+    gap: 19px;
+    padding: 143.13px 0 141.87px;
+  }
+}

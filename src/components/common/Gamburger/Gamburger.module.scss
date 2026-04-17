@@ -1,0 +1,53 @@
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.gamburger {
+  position: relative;
+  width: 30px;
+  height: 24px;
+  display: none;
+
+  @include response("desktop-medium") {
+    display: block;
+  }
+
+  span,
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  span {
+    @include center-y;
+  }
+}
+
+.gamburger.open {
+  span {
+    opacity: 0;
+  }
+
+  &::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &::after {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}

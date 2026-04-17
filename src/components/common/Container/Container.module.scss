@@ -1,0 +1,43 @@
+@import "@styles/breakpoints";
+@import "@styles/mixins/responsive";
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1180px;
+
+  @include response("wide") {
+      max-width: 100%;
+      padding: 0 72px;
+  }
+}
+
+.container.default {
+  @include response("desktop") {
+    padding: 0 122px;
+  }
+
+  @include response("tablet") {
+    @include container-tablet;
+  }
+}
+
+.container.secondary {
+  @include response("desktop") {
+    padding: 0 72px;
+  }
+
+  @include response("tablet") {
+    @include container-tablet;
+  }
+}
+
+.container.modal {
+  @include response("desktop") {
+    padding: 34px 30px;
+  }
+
+  @include response('tablet'){
+    padding: 10px 15px;
+  }
+}

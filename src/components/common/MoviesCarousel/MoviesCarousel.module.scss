@@ -1,0 +1,94 @@
+@import "@styles/variables";
+@import "@styles/breakpoints";
+@import "@styles/mixins/visual";
+
+.carousel {
+  position: relative;
+  margin-top: 150px;
+
+  @include response("desktop") {
+    width: 720px;
+    margin: 70px auto 0;
+  }
+
+  @include response("desktop-small") {
+    width: 100%;
+  }
+
+  @include response("tablet") {
+    padding: 0 100px;
+  }
+
+  @include response("tablet-medium") {
+    padding: 0;
+  }
+}
+
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 980px;
+
+  @include response("wide") {
+    max-width: 720px;
+  }
+}
+
+.button {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  @include border-radius-round;
+  border: 3px solid $color-base;
+
+  @include response("tablet-medium") {
+    display: none;
+  }
+
+  &::after {
+    position: absolute;
+    top: calc(50% - 7.5px);
+    width: 12px;
+    height: 12px;
+    content: "";
+    border-left: 3px solid $color-base;
+    border-bottom: 3px solid $color-base;
+  }
+}
+
+.button:hover {
+  color: $maron;
+  opacity: 0.5;
+}
+
+.buttonLeft {
+  @include center-y;
+  z-index: 1;
+  left: -96px;
+
+  @include response("desktop") {
+    left: -20px;
+    transform: translate(-100%, -50%);
+  }
+
+  &::after {
+    left: calc(50% - 5px);
+    transform: rotate(45deg);
+  }
+}
+
+.buttonRight {
+  @include center-y;
+  z-index: 1;
+  right: -96px;
+
+  @include response("desktop") {
+    right: -20px;
+    transform: translate(100%, -50%);
+  }
+
+  &::after {
+    right: calc(50% - 5px);
+    transform: rotate(225deg);
+  }
+}
