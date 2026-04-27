@@ -1,16 +1,16 @@
-@import "@styles/variables";
-@import "@styles/breakpoints";
-@import "@styles/mixins/visual";
+@import '@styles/variables';
+@import '@styles/breakpoints';
+@import '@styles/mixins/visual';
 
 .imageSection {
   border: 2px solid;
   @include border-radius-base;
 
-  @include response("wide") {
+  @include response('wide') {
     max-height: 400px;
   }
 
-  @include response("desktop-medium") {
+  @include response('desktop-medium') {
     min-height: 400px;
     margin: 0 15px;
   }
@@ -36,7 +36,7 @@
   height: 100%;
   padding: 238px 0;
 
-  @include response("wide") {
+  @include response('wide') {
     padding: 0;
   }
 }
@@ -60,7 +60,7 @@
 
   &::after,
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 18px;
     height: 2px;

@@ -1,19 +1,19 @@
-@import "@styles/variables";
-@import "@styles/breakpoints";
-@import "@styles/mixins/responsive";
-@import "@styles/mixins/visual";
+@import '@styles/variables';
+@import '@styles/breakpoints';
+@import '@styles/mixins/responsive';
+@import '@styles/mixins/visual';
 
 .blockMain {
   display: grid;
   grid-template-columns: minmax(280px, 479px) 1fr;
   gap: 120px;
 
-  @include response("wide") {
+  @include response('wide') {
     grid-template-columns: 280px 1fr;
     gap: 20px;
   }
 
-  @include response("tablet") {
+  @include response('tablet') {
     grid-template-columns: 1fr;
   }
 }
@@ -25,7 +25,7 @@
   word-break: break-all;
   padding-bottom: 11px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     padding-bottom: 0px;
   }
 }
@@ -33,12 +33,12 @@
 .blockImage {
   position: relative;
   align-self: start;
-  
-  @include response("wide") {
+
+  @include response('wide') {
     max-height: 405px;
   }
 
-  @include response("tablet") {
+  @include response('tablet') {
     max-height: 500px;
   }
 }
@@ -76,11 +76,11 @@
   gap: 70px;
   padding: 170px 0 70px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     padding: 100px 0 70px;
   }
 
-  @include response("tablet") {
+  @include response('tablet') {
     padding: 32px 0 70px;
   }
 }
@@ -89,7 +89,7 @@
   display: flex;
   gap: 20px;
 
-  @include response("tablet") {
+  @include response('tablet') {
     margin: 0 auto;
   }
 }
@@ -103,12 +103,12 @@
   background-color: $color-base;
   border-radius: 70px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     padding: 14px 28px;
     font-size: 20px;
   }
 
-  @include response("desktop-small") {
+  @include response('desktop-small') {
     padding: 8px 12px;
     font-size: 14px;
     line-height: 14px;
@@ -139,7 +139,7 @@
   height: 40px;
 
   img {
-    @include response("tablet") {
+    @include response('tablet') {
       width: 36px;
       height: 36px;
     }
@@ -150,7 +150,7 @@
   font-size: 44px;
   line-height: 37px;
 
-  @include response("tablet") {
+  @include response('tablet') {
     font-size: 36px;
     line-height: 36px;
   }
@@ -160,7 +160,7 @@
   font-size: 24px;
   line-height: 24px;
 
-  @include response("tablet") {
+  @include response('tablet') {
     font-size: 20px;
     line-height: 20px;
   }
@@ -170,7 +170,7 @@
   display: flex;
   justify-content: space-between;
 
-  @include response("tablet") {
+  @include response('tablet') {
     padding: 8px 0px;
   }
 }
@@ -182,17 +182,17 @@
   line-height: 37px;
   font-weight: 700;
 
-  @include response("desktop") {
+  @include response('desktop') {
     font-size: 23px;
     line-height: 23px;
   }
 
-  @include response("desktop-small") {
+  @include response('desktop-small') {
     font-size: 14px;
     line-height: 14px;
   }
 
-  @include response("tablet") {
+  @include response('tablet') {
     gap: 5px;
   }
 }
@@ -200,10 +200,10 @@
 .actor {
   &::after {
     display: inline;
-    content: ",";
+    content: ',';
   }
   &:last-child::after {
-    content: "";
+    content: '';
   }
 }
 
@@ -221,7 +221,7 @@
   font-size: 20px;
   line-height: 30px;
   font-weight: 700;
-  @include response("desktop-small") {
+  @include response('desktop-small') {
     font-size: 18px;
     line-height: 25px;
   }
@@ -231,7 +231,7 @@
   font-size: 20px;
   line-height: 30px;
 
-  @include response("desktop-small") {
+  @include response('desktop-small') {
     font-size: 18px;
     line-height: 25px;
   }
@@ -244,16 +244,16 @@
   gap: 60px;
   padding: 100px 0 75px;
 
-  @include response("tablet-medium") {
+  @include response('tablet-medium') {
     gap: 19px;
   }
 
-  @include response("desktop") {
+  @include response('desktop') {
     margin: 0 auto;
     max-width: 480px;
   }
 
-  @include response("tablet") {
+  @include response('tablet') {
     padding-top: 70px;
     gap: 30px;
   }

@@ -1,1 +1,1 @@
-export { default } from "./GenresDropDown";
+export { default } from './GenresDropDown';

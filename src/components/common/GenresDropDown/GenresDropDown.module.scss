@@ -1,5 +1,5 @@
-@import "@styles/variables";
-@import "@styles/mixins/visual";
+@import '@styles/variables';
+@import '@styles/mixins/visual';
 
 .block {
   @include field-base;
@@ -75,6 +75,6 @@
 }
 
 .arrowError {
-  filter: brightness(0) saturate(100%) invert(62%) sepia(100%) saturate(343%)
-    hue-rotate(346deg) brightness(101%) contrast(103%) !important;
+  filter: brightness(0) saturate(100%) invert(62%) sepia(100%) saturate(343%) hue-rotate(346deg)
+    brightness(101%) contrast(103%) !important;
 }

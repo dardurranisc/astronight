@@ -1,31 +1,35 @@
-import { useState } from "react";
-import { ChangeEvent } from "react";
+import { useState } from 'react';
+import { ChangeEvent } from 'react';
 
-const useField = (
-  initialValue: string,
-  validateFn?: (value: string) => string | undefined,
-  replaceFn?: (value: string) => string,
-) => {
-  const [field, setField] = useState(initialValue);
-  const [error, setError] = useState("");
+interface UseFiledProps {
+  initialValue: string | undefined;
+  validateFn?: (value: string) => string | undefined;
+  replaceFn?: (value: string) => string;
+}
+
+const useField = ({ initialValue, validateFn, replaceFn }: UseFiledProps) => {
+  const [field, setField] = useState(initialValue || '');
+  const [error, setError] = useState('');
 
   const validate = (value: string) => {
     if (validateFn) {
-      const error = validateFn(value);
-      setError(error || "");
+      const error = validateFn(value ? value : '');
+      setError(error || '');
     }
     return error;
   };
 
-  const handleFieldChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const editValue = (newValue: string) => {
+    setField(newValue);
+  };
+
+  const handleFieldChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     let newValue = e.target.value;
     if (replaceFn) {
       newValue = replaceFn(newValue);
     }
     setField(newValue);
-    setError("");
+    setError('');
   };
 
   const handleFieldBlur = () => {
@@ -33,17 +37,18 @@ const useField = (
   };
 
   const handleFieldFocus = () => {
-    setError("");
+    setError('');
   };
 
   const reset = () => {
-    setField(initialValue);
-    setError("");
+    setField(initialValue || '');
+    setError('');
   };
 
   return {
     field,
     error,
+    editValue,
     validate,
     handleFieldChange,
     handleFieldBlur,

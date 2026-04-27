@@ -1,6 +1,6 @@
-@import "@styles/breakpoints";
-@import "@styles/variables";
-@import "@styles/mixins/visual";
+@import '@styles/breakpoints';
+@import '@styles/variables';
+@import '@styles/mixins/visual';
 
 .overlay {
   @include overlay(1200, 0.8);
@@ -14,12 +14,12 @@
   border: 2px solid;
   @include border-radius-base;
 
-  @include response("wide") {
+  @include response('wide') {
     padding: 15px 15px 34px 15px;
   }
-  
-  @include response('tablet'){
-    margin:0;
+
+  @include response('tablet') {
+    margin: 0;
   }
 }
 
@@ -28,7 +28,7 @@
 }
 
 .header .title {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-size: 44px;
   line-height: 37px;
 }
@@ -41,7 +41,7 @@
   @include flex-col-center(40px);
   margin-top: 73px;
 
-  @include response("wide") {
+  @include response('wide') {
     margin-top: 28px;
   }
 }
@@ -52,12 +52,12 @@
   gap: 80px;
   width: 100%;
 
-  @include response("wide") {
+  @include response('wide') {
     grid-template-columns: 280px 1fr;
     gap: 61px;
   }
 
-  @include response("desktop-medium") {
+  @include response('desktop-medium') {
     grid-template-columns: 1fr;
     gap: 10px;
   }
@@ -67,7 +67,7 @@
   display: flex;
   gap: 30px;
 
-  @include response("tablet") {
+  @include response('tablet') {
     flex-direction: column;
     gap: 15px;
   }
@@ -81,12 +81,12 @@
   padding-bottom: 4px;
   color: $color-base;
 
-  @include response("desktop") {
+  @include response('desktop') {
     gap: 15px;
   }
 
-  @include response("tablet"){
-    margin-right:0;
+  @include response('tablet') {
+    margin-right: 0;
   }
 }
 
@@ -99,3 +99,7 @@
   @include error-message;
 }
 
+.wrapperBtn {
+  display: flex;
+  gap: 40px;
+}

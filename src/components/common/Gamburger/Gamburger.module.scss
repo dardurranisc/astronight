@@ -1,5 +1,5 @@
-@import "@styles/breakpoints";
-@import "@styles/mixins/visual";
+@import '@styles/breakpoints';
+@import '@styles/mixins/visual';
 
 .gamburger {
   position: relative;
@@ -7,14 +7,14 @@
   height: 24px;
   display: none;
 
-  @include response("desktop-medium") {
+  @include response('desktop-medium') {
     display: block;
   }
 
   span,
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     width: 100%;

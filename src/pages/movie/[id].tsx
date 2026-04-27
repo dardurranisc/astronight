@@ -1,33 +1,38 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo } from 'react';
+import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
+import clsx from 'clsx';
 
-import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store";
+import { RootState } from '@/store';
 
-import clsx from "clsx";
+import { selectAllMovies } from '@/store/moviesSlice';
 
-import Background from "@/components/common/Background";
-import Section from "@/components/common/Section";
-import Container from "@/components/common/Container";
-import AddSomething from "@/components/common/AddSomething";
+import MovieModal from '@/components/common/MovieModal';
+import Background from '@/components/common/Background';
+import Section from '@/components/common/Section';
+import Container from '@/components/common/Container';
+import AddSomething from '@/components/common/AddSomething';
 
-import { Movie } from "@/types/movie";
-import { formatRating } from "@/utils/formatRating";
+import { formatRating } from '@/utils/formatRating';
 
-import styles from "./moviePage.module.scss";
+import styles from './moviePage.module.scss';
 
 const MoviePage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+
   const router = useRouter();
-  const { id } = router.query;
+  const movieId = router.query.id;
 
   const movie = useSelector((state: RootState) => {
-    const allMovies = [...state.movies.movies, ...state.movies.userMovies];
-    return allMovies.find((m: Movie) => m.id === Number(id));
+    if (!movieId) return undefined;
+
+    const allMovies = selectAllMovies(state);
+    return allMovies.find((m) => String(m.id) === String(movieId));
   });
 
   const memoActors = useMemo(() => {
-    return movie?.actors?.split(",");
+    return movie?.actors?.split(',');
   }, [movie?.actors]);
 
   const isLimitActors = useMemo(() => {
@@ -42,13 +47,7 @@ const MoviePage = () => {
 
   return (
     <>
-      <Background
-        src="/images/moviePage/background.png"
-        alt="forest"
-        fill
-        priority
-        fixed
-      />
+      <Background src="/images/moviePage/background.png" alt="forest" fill priority fixed />
       <Section>
         <Container variant="secondary">
           <div className={styles.block}>
@@ -57,29 +56,29 @@ const MoviePage = () => {
                 <h3>{movie?.title}</h3>
                 <span>[{movie?.year}]</span>
               </div>
-              <button className={styles.edit}>
+              <button className={styles.edit} onClick={() => setIsAddModalOpen(true)}>
                 <img src="/images/icons/edit.svg" alt="Edit" />
               </button>
+              <MovieModal
+                isOpen={isAddModalOpen}
+                onClose={() => setIsAddModalOpen(false)}
+                initialMovie={movie}
+              />
             </div>
             <div className={styles.blockMain}>
               <div className={styles.blockImage}>
-                <img src={movie?.src} className={styles.preview} alt={movie?.alt}/>
+                <img src={movie?.src} className={styles.preview} alt={movie?.alt} />
                 <span className={styles.rating}>
-                  <img
-                    className={styles.star}
-                    src="/images/hero/icons/star.svg"
-                    alt="Star"
-                  />
+                  <img className={styles.star} src="/images/hero/icons/star.svg" alt="Star" />
                   {formatRating(movie?.rating)}
                 </span>
               </div>
               <div className={styles.blockInformation}>
                 <div className={styles.genresBlock}>
                   {movie?.genre?.map((g) => (
-                    <div 
-                      key={g}
-                      className={styles.genresList}
-                    >{g}</div>
+                    <div key={g} className={styles.genresList}>
+                      {g}
+                    </div>
                   ))}
                 </div>
                 <div className={styles.actors}>
@@ -92,16 +91,14 @@ const MoviePage = () => {
                   </div>
                   {isLimitActors && (
                     <button
-                      className={clsx(styles.actorsMore , isOpen && styles.opening)}
+                      className={clsx(styles.actorsMore, isOpen && styles.opening)}
                       onClick={() => setIsOpen(!isOpen)}
                     >
                       <img src="/images/arrow/arrowDown.svg" alt="arrow" />
                     </button>
                   )}
                 </div>
-                <div className={styles.director}>
-                  Director: {movie?.director}
-                </div>
+                <div className={styles.director}>Director: {movie?.director}</div>
                 <div className={styles.description}>{movie?.description}</div>
               </div>
             </div>

@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { genresList } from "./constants/genresData";
+import { genresList } from './constants/genresData';
 
-import styles from "./GenresDropDown.module.scss";
+import styles from './GenresDropDown.module.scss';
 
 interface GenresDropDownProps {
   selected: string[];
@@ -26,40 +26,34 @@ const GenresDropDown = ({ selected, error, onChange }: GenresDropDownProps) => {
       if (selected.length < 3) {
         onChange([...selected, genre]);
       } else {
-        alert("Можно выбрать не более 3 жанров");
+        alert('Можно выбрать не более 3 жанров');
       }
     }
   };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(e.target as Node)
-      ) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
   useEffect(() => {
     setCountSelected(selected.length);
-  },[selected]);
+  }, [selected]);
 
   return (
     <div
-      className={clsx(styles.block,isOpen && styles.blockOpen,showError && styles.errorBlock)}
+      className={clsx(styles.block, isOpen && styles.blockOpen, showError && styles.errorBlock)}
       ref={containerRef}
     >
       {isOpen ? (
         <>
-          <div
-            className={styles.blockHeader}
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <div className={styles.blockHeader} onClick={() => setIsOpen(!isOpen)}>
             <div>{countSelected} tags</div>
             <img
               className={styles.arrow}
@@ -72,7 +66,10 @@ const GenresDropDown = ({ selected, error, onChange }: GenresDropDownProps) => {
             <div className={styles.selectLists}>
               {genresList.map((genre) => (
                 <label
-                  className={clsx(styles.selectList,selected.includes(genre.name) && styles.selected)}
+                  className={clsx(
+                    styles.selectList,
+                    selected.includes(genre.name) && styles.selected
+                  )}
                   key={genre.id}
                 >
                   {genre.name}
@@ -93,15 +90,13 @@ const GenresDropDown = ({ selected, error, onChange }: GenresDropDownProps) => {
         </>
       ) : (
         <div className={styles.blockHeader} onClick={() => setIsOpen(!isOpen)}>
-          <div
-            className={clsx(styles.placeholder , showError && styles.placeholderError)}
-          >
+          <div className={clsx(styles.placeholder, showError && styles.placeholderError)}>
             {countSelected > 0
-              ? `${countSelected} ${countSelected === 1 ? "tag" : "tags"}`
-              : "genres*"}
+              ? `${countSelected} ${countSelected === 1 ? 'tag' : 'tags'}`
+              : 'genres*'}
           </div>
           <img
-            className={clsx(styles.arrow , showError && styles.arrowError )}
+            className={clsx(styles.arrow, showError && styles.arrowError)}
             src="/images/arrow/arrowDown.svg"
             alt="ArrowDown"
           />

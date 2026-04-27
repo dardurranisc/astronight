@@ -1,13 +1,12 @@
-import Background from "@/components/common/Background";
-import Section from "@components/common/Section";
-import Container from "@components/common/Container/Container";
-import SectionTitle from "@/components/common/SectionTitle";
+import Background from '@/components/common/Background';
+import Section from '@components/common/Section';
+import Container from '@components/common/Container/Container';
+import SectionTitle from '@/components/common/SectionTitle';
 
-import { HEADING } from "@/constants/headingData";
-import { paragraphsData } from "./constants/paragraphsData";
+import { HEADING } from '@/constants/headingData';
+import { paragraphsData } from './constants/paragraphsData';
 
-import styles from "./IntroSection.module.scss";
-
+import styles from './IntroSection.module.scss';
 
 const IntroSection = () => {
   return (

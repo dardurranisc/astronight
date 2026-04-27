@@ -1,59 +1,73 @@
-@import "@styles/variables";
-@import "@styles/breakpoints";
-@import "@styles/mixins/visual";
+@import '@styles/variables';
+@import '@styles/breakpoints';
+@import '@styles/mixins/visual';
 
 .button {
-  font-family: "Anonymous Pro";
+  font-family: 'Anonymous Pro';
   padding: 19px 32px;
   @include font-line(25px);
   font-weight: 700;
+  border-radius: 70px;
 }
 
 .default {
   border-radius: 60px;
   color: $maron;
   background-color: $color-base;
-  outline:2px solid $color-base;
+  outline: 2px solid $color-base;
 
-  @include response("desktop") {
+  @include response('desktop') {
     padding: 14px 28px;
     font-size: 20px;
   }
 
-  @include response("tablet-medium") {
+  @include response('tablet-medium') {
     @include font-line(14px);
     padding: 8px 12px;
   }
 
   &:hover {
     color: $color-base;
-    background-color:$color-base-opacity-20;
-    outline-color:$color-base;
+    background-color: $color-base-opacity-20;
+    outline-color: $color-base;
   }
 
   &:active {
     color: $color-base;
-    background-color:transparent;
-    outline-color:$color-base;
+    background-color: transparent;
+    outline-color: $color-base;
   }
 }
 
-
 .secondary {
-  border-radius: 70px;
-  background-color:$color-base-opacity-20;
-  outline:2px solid $color-base-opacity-50;
+  background-color: $color-base-opacity-20;
+  outline: 2px solid $color-base-opacity-50;
 
   &:hover {
-    color:$maron;
-    background-color:$color-base;
-    outline-color:$color-base;
+    color: $maron;
+    background-color: $color-base;
+    outline-color: $color-base;
   }
 
   &:focus {
-    color:$color-base;
-    background-color:transparent;
-    outline-color:$color-base;
+    color: $color-base;
+    background-color: transparent;
+    outline-color: $color-base;
   }
 }
 
+.tertiary {
+  background-color: transparent;
+  outline: 2px solid $color-base;
+
+  &:hover {
+    background-color: $color-base-opacity-20;
+    outline-color: $color-base;
+  }
+
+  &:focus {
+    color: $color-base;
+    background-color: transparent;
+    outline-color: $color-base;
+  }
+}

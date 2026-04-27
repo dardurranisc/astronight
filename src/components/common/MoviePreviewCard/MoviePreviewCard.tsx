@@ -1,13 +1,13 @@
-import { Movie } from "@/types/movie";
+import { Movie } from '@/types/movie';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { formatRating } from "@/utils/formatRating";
+import { formatRating } from '@/utils/formatRating';
 
-import styles from "./MoviePreviewCard.module.scss";
+import styles from './MoviePreviewCard.module.scss';
 
-interface MoviePreviewCardProps extends Omit<Movie, "id"> {
-  variant?: "default" | "medium";
+interface MoviePreviewCardProps extends Omit<Movie, 'id'> {
+  variant?: 'default' | 'medium';
 }
 
 const MoviePreviewCard = ({
@@ -16,14 +16,14 @@ const MoviePreviewCard = ({
   alt,
   rating,
   year,
-  variant = "default",
+  variant = 'default',
 }: MoviePreviewCardProps) => {
   return (
-    <div className={clsx(styles.card , styles[`${variant}Card`])}>
+    <div className={clsx(styles.card, styles[`${variant}Card`])}>
       <div className={styles.wrapper}>
         <img className={styles.cardImage} src={src} alt={alt} />
         <span className={styles.cardRating}>
-          <img className={styles.star} src="/images/hero/icons/star.svg" alt="Star"/>
+          <img className={styles.star} src="/images/hero/icons/star.svg" alt="Star" />
           {formatRating(rating)}
         </span>
       </div>

@@ -1,1 +1,1 @@
-export { default } from "./MenuModal";
+export { default } from './MenuModal';

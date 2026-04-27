@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 // @ts-expect-error swiper
-import Rating from "react-ratings-star";
+import Rating from 'react-ratings-star';
 
-import useWindowWidth from "@/hooks/useWindowWidth";
+import useWindowWidth from '@/hooks/useWindowWidth';
 
-import { formatRating } from "@/utils/formatRating";
+import { formatRating } from '@/utils/formatRating';
 
-import styles from "./StarRating.module.scss";
+import styles from './StarRating.module.scss';
 
 interface StarRatingProps {
-  value: number;
+  value: number | undefined;
   onChange: (rating: number) => void;
 }
 

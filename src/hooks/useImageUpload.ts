@@ -1,28 +1,34 @@
-import { useState } from "react";
-import { ChangeEvent } from "react";
+import { useState } from 'react';
+import { ChangeEvent } from 'react';
 
-import { readAsDataURL } from "@/utils/readAsDataURL";
+import { readAsDataURL } from '@/utils/readAsDataURL';
 
-const useImageUpload = (
-  initialValue: string,
-  validateFn: (value: string) => string | undefined,
-) => {
+interface UseImageUploadProps {
+  initialValue: string;
+  validateFn: (value: string) => string | undefined;
+}
+
+const useImageUpload = ({ initialValue, validateFn }: UseImageUploadProps) => {
   const [field, setField] = useState(initialValue);
   const [imageFocused, setImageFocused] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const validate = (value: string) => {
     if (validateFn) {
       const error = validateFn(value);
-      setError(error || "");
+      setError(error || '');
     }
+  };
+
+  const editValue = (value: string) => {
+    setField(value);
   };
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
     readAsDataURL({ file, setField });
-    setError("");
+    setError('');
   };
 
   const handleImageBlur = () => {
@@ -32,12 +38,12 @@ const useImageUpload = (
 
   const handleImageFocus = () => {
     setImageFocused(true);
-    setError("");
+    setError('');
   };
 
   const reset = () => {
     setField(initialValue);
-    setError("");
+    setError('');
   };
 
   return {
@@ -45,11 +51,12 @@ const useImageUpload = (
     setField,
     imageFocused,
     error,
+    editValue,
     validate,
     handleImageBlur,
     handleImageChange,
     handleImageFocus,
-    reset
+    reset,
   };
 };
 

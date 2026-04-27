@@ -1,9 +1,9 @@
-@import "@styles/breakpoints";
+@import '@styles/breakpoints';
 
 .main {
   padding: 150px 0px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     padding: 70px 0px;
   }
 }

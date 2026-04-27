@@ -1,25 +1,25 @@
-@import "@styles/variables";
-@import "@styles/breakpoints";
-@import "@styles/mixins/visual";
+@import '@styles/variables';
+@import '@styles/breakpoints';
+@import '@styles/mixins/visual';
 
 .carousel {
   position: relative;
   margin-top: 150px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     width: 720px;
     margin: 70px auto 0;
   }
 
-  @include response("desktop-small") {
+  @include response('desktop-small') {
     width: 100%;
   }
 
-  @include response("tablet") {
+  @include response('tablet') {
     padding: 0 100px;
   }
 
-  @include response("tablet-medium") {
+  @include response('tablet-medium') {
     padding: 0;
   }
 }
@@ -29,7 +29,7 @@
   margin: 0 auto;
   max-width: 980px;
 
-  @include response("wide") {
+  @include response('wide') {
     max-width: 720px;
   }
 }
@@ -41,7 +41,7 @@
   @include border-radius-round;
   border: 3px solid $color-base;
 
-  @include response("tablet-medium") {
+  @include response('tablet-medium') {
     display: none;
   }
 
@@ -50,7 +50,7 @@
     top: calc(50% - 7.5px);
     width: 12px;
     height: 12px;
-    content: "";
+    content: '';
     border-left: 3px solid $color-base;
     border-bottom: 3px solid $color-base;
   }
@@ -66,7 +66,7 @@
   z-index: 1;
   left: -96px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     left: -20px;
     transform: translate(-100%, -50%);
   }
@@ -82,7 +82,7 @@
   z-index: 1;
   right: -96px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     right: -20px;
     transform: translate(100%, -50%);
   }

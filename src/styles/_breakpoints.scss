@@ -1,12 +1,12 @@
 $breakpoints: (
-  "full-hd": 1920px,
-  "wide": 1250px,
-  "desktop": 1024px,
-  "desktop-medium": 980px,
-  "desktop-small": 920px,
-  "tablet": 768px,
-  "tablet-medium": 600px,
-  "mobile": 375px,
+  'full-hd': 1920px,
+  'wide': 1250px,
+  'desktop': 1024px,
+  'desktop-medium': 980px,
+  'desktop-small': 920px,
+  'tablet': 768px,
+  'tablet-medium': 600px,
+  'mobile': 375px,
 );
 
 @mixin response($breakpoint) {

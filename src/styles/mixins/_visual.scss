@@ -1,5 +1,5 @@
-@import "../variables";
-@import "../breakpoints";
+@import '../variables';
+@import '../breakpoints';
 
 @mixin flex-col-center($gap: null) {
   display: flex;
@@ -34,24 +34,24 @@
 }
 
 @mixin heading-font-line {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-weight: 400;
   font-size: 60px;
   line-height: 60px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     font-size: 44px;
     line-height: 44px;
   }
 
-  @include response("tablet-medium") {
+  @include response('tablet-medium') {
     font-size: 26px;
     line-height: 26px;
   }
 }
 
 @mixin field-base {
-  font-family: "Anonymous Pro";
+  font-family: 'Anonymous Pro';
   font-size: 24px;
   line-height: 24px;
   width: 100%;
@@ -87,7 +87,7 @@
   line-height: 12px;
   color: $golden;
 
-  @include response ("desktop-medium"){
+  @include response('desktop-medium') {
     bottom: -3px;
     font-size: 8px;
     line-height: 8px;
@@ -114,7 +114,7 @@
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     width: 100%;

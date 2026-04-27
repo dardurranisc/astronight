@@ -1,19 +1,19 @@
-@import "@styles/variables";
-@import "@styles/breakpoints";
-@import "@styles/mixins/visual";
+@import '@styles/variables';
+@import '@styles/breakpoints';
+@import '@styles/mixins/visual';
 
 .header {
   position: relative;
   z-index: 1200;
   padding: 30px 0px;
 
-  @include response("tablet") {
+  @include response('tablet') {
     padding: 15px 0;
   }
 }
 
 .default {
-  background-color:$dark-sky-bg;
+  background-color: $dark-sky-bg;
 }
 
 .transparent {
@@ -34,14 +34,14 @@
 }
 
 .logo {
-  @include response("desktop-medium") {
+  @include response('desktop-medium') {
     flex: 1;
     text-align: center;
   }
 }
 
 .logo img {
-  @include response("tablet") {
+  @include response('tablet') {
     width: 71px;
     height: 46px;
   }
@@ -51,12 +51,12 @@
   position: relative;
   @include font-line(24px);
 
-  @include response("tablet") {
+  @include response('tablet') {
     @include font-line(20px);
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: -10px;
     top: 50%;
@@ -66,14 +66,14 @@
     outline: 2px solid $color-base;
     @include border-radius-round;
 
-    @include response("tablet") {
+    @include response('tablet') {
       width: 26px;
       height: 26px;
     }
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: -18px;
@@ -84,7 +84,7 @@
       linear-gradient($color-base, $color-base) center / 2px 12px no-repeat,
       linear-gradient($color-base, $color-base) center / 12px 2px no-repeat;
 
-    @include response("tablet") {
+    @include response('tablet') {
       width: 10px;
       height: 10px;
       left: -13px;

@@ -1,12 +1,12 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import styles from "./FormField.module.scss";
+import styles from './FormField.module.scss';
 
 interface FormFieldProps {
-  variant?: "input" | "textarea";
-  value: string;
+  variant?: 'input' | 'textarea';
+  value: number | string | undefined;
   error?: string;
   type?: string;
   placeholder: string;
@@ -18,10 +18,10 @@ interface FormFieldProps {
 }
 
 const FormField = ({
-  variant = "input",
+  variant = 'input',
   value,
   error,
-  type = "text",
+  type = 'text',
   placeholder,
   maxLength,
   rows,
@@ -31,7 +31,7 @@ const FormField = ({
 }: FormFieldProps) => {
   return (
     <div className={styles.field}>
-      {variant === "input" ? (
+      {variant === 'input' ? (
         <>
           <input
             className={clsx(styles.input, error && styles.errorInput)}

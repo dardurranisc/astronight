@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import SectionTitle from "../SectionTitle";
-import AddMovieModal from "../AddMovieModal";
-import Button from "../Button";
+import SectionTitle from '../SectionTitle';
+import MovieModal from '../MovieModal';
+import Button from '../Button';
 
-import { HEADING } from "@/constants/headingData";
+import { HEADING } from '@/constants/headingData';
 
 const AddSomething = () => {
-  const [isAddModalOpen,setIsAddModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   return (
     <>
@@ -17,7 +17,7 @@ const AddSomething = () => {
         ariaLabel="Добавить фильм"
         onClick={() => setIsAddModalOpen(!isAddModalOpen)}
       />
-      <AddMovieModal
+      <MovieModal
         isOpen={isAddModalOpen}
         onClose={() => setIsAddModalOpen(!isAddModalOpen)}
       />

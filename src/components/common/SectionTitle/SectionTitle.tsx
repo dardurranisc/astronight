@@ -1,6 +1,6 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import styles from "./SectionTitle.module.scss";
+import styles from './SectionTitle.module.scss';
 
 interface SectionTitleProps {
   text: string;
@@ -8,11 +8,7 @@ interface SectionTitleProps {
 }
 
 const SectionTitle = ({ text, mobileLeft }: SectionTitleProps) => {
-  return (
-    <h2 className={clsx(styles.heading,mobileLeft && styles.mobileLeft)}>
-      {text}
-    </h2>
-  );
+  return <h2 className={clsx(styles.heading, mobileLeft && styles.mobileLeft)}>{text}</h2>;
 };
 
 export default SectionTitle;

@@ -1,8 +1,8 @@
-@import "./variables";
-@import "./breakpoints";
-@import "./mixins/visual";
+@import './variables';
+@import './breakpoints';
+@import './mixins/visual';
 
-@import "swiper/css";
+@import 'swiper/css';
 
 * {
   margin: 0;
@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: "Anonymous Pro";
+  font-family: 'Anonymous Pro';
   font-weight: 400;
   font-size: 24px;
   color: $color-base;
@@ -38,26 +38,25 @@ button {
 button,
 button::after,
 button::before,
-a{
+a {
   transition:
     color 0.2s,
     background-color 0.2s,
-    border-color 0.2s
+    border-color 0.2s;
 }
-
 
 h1 {
   @include heading-font-line;
 }
 
 h3 {
-  font-family: "Alata";
+  font-family: 'Alata';
   font-weight: 400;
   font-size: 40px;
   line-height: 40px;
   letter-spacing: 0px;
 
-  @include response("desktop") {
+  @include response('desktop') {
     font-size: 20px;
     line-height: 20px;
   }

@@ -1,8 +1,8 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent } from 'react';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import styles from "./ImageUpload.module.scss";
+import styles from './ImageUpload.module.scss';
 
 interface ImageUploadProps {
   value?: string;
@@ -12,16 +12,10 @@ interface ImageUploadProps {
   onBlur?: () => void;
 }
 
-const ImageUpload = ({
-  value,
-  error,
-  onChange,
-  onFocus,
-  onBlur,
-}: ImageUploadProps) => {
+const ImageUpload = ({ value, error, onChange, onFocus, onBlur }: ImageUploadProps) => {
   return (
     <div
-      className={clsx(styles.imageSection,error && styles.errorInput)}
+      className={clsx(styles.imageSection, error && styles.errorInput)}
       onFocus={onFocus}
       onBlur={onBlur}
     >
@@ -30,7 +24,7 @@ const ImageUpload = ({
           <div className={styles.wrapper}>
             <div className={styles.circle} />
             <span>replace image</span>
-            <img className={styles.imagePreview} src={value} alt="PreviewMovie"/>
+            <img className={styles.imagePreview} src={value} alt="PreviewMovie" />
           </div>
         ) : (
           <>
@@ -41,12 +35,7 @@ const ImageUpload = ({
             {error && <div className={styles.errorMessage}>{error}</div>}
           </>
         )}
-        <input
-          type="file"
-          accept="image/*"
-          className={styles.inputUpload}
-          onChange={onChange}
-        />
+        <input type="file" accept="image/*" className={styles.inputUpload} onChange={onChange} />
       </label>
     </div>
   );

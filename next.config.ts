@@ -1,11 +1,11 @@
-import type { NextConfig } from "next";
-import path from "path";
+import type { NextConfig } from 'next';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   sassOptions: {
-    silenceDeprecations: ["import", "global-builtin"],
-    includePaths: [path.join(__dirname, "src/styles")],
+    silenceDeprecations: ['import', 'global-builtin'],
+    includePaths: [path.join(__dirname, 'src/styles')],
   },
 };
 

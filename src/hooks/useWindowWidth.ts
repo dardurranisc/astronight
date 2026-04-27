@@ -13,4 +13,4 @@ const useWindowWidth = () => {
   return width;
 };
 
-export default useWindowWidth
+export default useWindowWidth;

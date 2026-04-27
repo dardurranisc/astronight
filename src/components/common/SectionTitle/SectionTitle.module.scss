@@ -1,5 +1,5 @@
-@import "@styles/breakpoints";
-@import "@styles/mixins/visual";
+@import '@styles/breakpoints';
+@import '@styles/mixins/visual';
 
 .heading {
   @include heading-font-line;
@@ -7,7 +7,7 @@
 }
 
 .mobileLeft {
-  @include response("tablet-medium") {
+  @include response('tablet-medium') {
     text-align: unset;
   }
 }
