@@ -5,7 +5,8 @@ import styles from './Button.module.scss';
 interface ButtonProps {
   text: string;
   ariaLabel?: string;
-  variant?: 'default' | 'secondary' | 'tertiary';
+  isActiveFilter?: boolean;
+  variant?: 'default' | 'secondary' | 'tertiary' | 'filter';
   type?: 'button' | 'submit';
   onClick?: () => void;
 }
@@ -13,13 +14,14 @@ interface ButtonProps {
 const Button = ({
   text,
   ariaLabel,
+  isActiveFilter,
   variant = 'default',
   type = 'button',
   onClick,
 }: ButtonProps) => {
   return (
     <button
-      className={clsx(styles.button, styles[variant])}
+      className={clsx(styles.button, styles[variant], isActiveFilter && styles.filterActive)}
       onClick={onClick}
       aria-label={ariaLabel}
       type={type}

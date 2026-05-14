@@ -5,15 +5,16 @@ import clsx from 'clsx';
 import styles from './Background.module.scss';
 
 interface BackgroundProps extends Pick<ImageProps, 'fill' | 'priority'> {
+  variant?: 'default' | 'fixed' | 'dynamic';
   src: string;
   alt: string;
   width?: number;
   height?: number;
   opacity?: number;
-  fixed?: boolean;
 }
 
 const Background = ({
+  variant = 'default',
   src,
   alt,
   width,
@@ -21,10 +22,9 @@ const Background = ({
   fill,
   priority,
   opacity = 1,
-  fixed,
 }: BackgroundProps) => {
   return (
-    <div className={clsx(styles.background, fixed && styles.fixed)}>
+    <div className={clsx(styles.background, styles[variant])}>
       <Image
         src={src}
         alt={alt}

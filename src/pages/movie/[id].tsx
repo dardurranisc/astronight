@@ -47,7 +47,13 @@ const MoviePage = () => {
 
   return (
     <div className={styles.content}>
-      <Background src="/images/moviePage/background.png" alt="forest" fill priority fixed />
+      <Background
+        src="/images/moviePage/background.png"
+        alt="forest"
+        fill
+        priority
+        variant="fixed"
+      />
       <Section>
         <Container variant="secondary">
           <div className={styles.block}>

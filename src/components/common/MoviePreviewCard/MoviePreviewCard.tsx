@@ -1,8 +1,7 @@
-import { Movie } from '@/types/movie';
-
 import clsx from 'clsx';
 
 import { formatRating } from '@/utils/formatRating';
+import { Movie } from '@/types/movie';
 
 import styles from './MoviePreviewCard.module.scss';
 

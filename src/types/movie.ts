@@ -1,4 +1,4 @@
-export interface Movie {
+export type Movie = {
   id: number;
   title: string;
   src: string;
@@ -9,4 +9,4 @@ export interface Movie {
   genre: string[];
   actors: string;
   description?: string;
-}
+};

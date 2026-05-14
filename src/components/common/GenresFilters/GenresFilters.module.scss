@@ -1,0 +1,53 @@
+@import '@/styles/variables';
+@import '@/styles/breakpoints';
+@import '@/styles/mixins/visual';
+
+.filterBlock {
+  padding: 50px 0;
+
+  @include response('desktop') {
+    padding: 53px 0;
+  }
+
+  @include response('tablet-medium') {
+    padding: 25px 0;
+  }
+}
+
+.filterTitle {
+  font-family: 'Alata';
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 37px;
+
+  @include response('desktop') {
+    @include font-line(25px);
+  }
+
+  @include response('tablet-medium') {
+    @include font-line(18px);
+  }
+}
+
+.filterLists {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+
+  @include response('desktop') {
+    gap: 18px 14px;
+  }
+
+  @include response('tablet-medium') {
+    display: none;
+    gap: 8px;
+    margin-top: 25px;
+
+    &.open {
+      display: flex;
+    }
+  }
+}

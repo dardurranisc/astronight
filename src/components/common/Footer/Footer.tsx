@@ -1,10 +1,16 @@
+import clsx from 'clsx';
+
 import Container from '../Container';
 
 import styles from './Footer.module.scss';
 
-const Footer = () => {
+interface FooterProps {
+  isGlobal?: boolean;
+}
+
+const Footer = ({ isGlobal = true }: FooterProps) => {
   return (
-    <footer className={styles.footer}>
+    <footer className={clsx(styles.footer, isGlobal && 'globalFooter')}>
       <Container>
         <div className={styles.copyright}>
           <p>.all rights reserved.</p>

@@ -1,10 +1,11 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 import clsx from 'clsx';
 
-import { genresList } from './constants/genresData';
+import { genresData } from '@/constants/genresData';
 
 import styles from './GenresDropDown.module.scss';
+import useClickOutside from '@/hooks/useClickOutside';
 
 interface GenresDropDownProps {
   selected: string[];
@@ -17,7 +18,7 @@ const GenresDropDown = ({ selected, error, onChange }: GenresDropDownProps) => {
   const [countSelected, setCountSelected] = useState(0);
 
   const showError = error && !isOpen;
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useClickOutside(isOpen, () => setIsOpen(false));
 
   const toggleGenre = (genre: string) => {
     if (selected.includes(genre)) {
@@ -30,17 +31,6 @@ const GenresDropDown = ({ selected, error, onChange }: GenresDropDownProps) => {
       }
     }
   };
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
 
   useEffect(() => {
     setCountSelected(selected.length);
@@ -64,7 +54,7 @@ const GenresDropDown = ({ selected, error, onChange }: GenresDropDownProps) => {
           </div>
           <div className={styles.selectDown}>
             <div className={styles.selectLists}>
-              {genresList.map((genre) => (
+              {genresData.map((genre) => (
                 <label
                   className={clsx(
                     styles.selectList,

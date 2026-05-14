@@ -1,0 +1,72 @@
+@import '@/styles/variables';
+@import '@/styles/breakpoints';
+
+/* Swiper Custom */
+
+.movies {
+  margin-top: 100px;
+
+  @include response('desktop') {
+    margin-top: 70px;
+  }
+
+  @include response('tablet-medium') {
+    margin-top: 25px;
+  }
+
+  :global(.swiper-slide) {
+    margin-top: 0px !important;
+    margin-bottom: 50px;
+
+    @include response('tablet-medium') {
+      margin-bottom: 20px;
+    }
+  }
+
+  :global(.swiper-wrapper) {
+    margin-bottom: 77px;
+
+    @include response('desktop') {
+      margin-bottom: 42px;
+    }
+
+    @include response('tablet-medium') {
+      margin-bottom: 25px;
+    }
+  }
+
+  :global(.swiper-pagination) {
+    display: flex;
+    gap: 46px;
+    justify-content: center;
+
+    @include response('desktop') {
+      gap: 27px;
+    }
+
+    @include response('tablet-medium') {
+      gap: 14px;
+    }
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 16px;
+    height: 16px;
+    border: 2px solid $color-base;
+    opacity: 1;
+
+    @include response('desktop') {
+      width: 12px;
+      height: 12px;
+    }
+
+    @include response('tablet-medium') {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background: $color-base;
+  }
+}
