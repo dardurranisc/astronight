@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
-import Container from '../Container';
-import Menu from '../Menu';
-import MenuModal from '../MenuModal/MenuModal';
-import Gamburger from '../Gamburger';
-import MovieModal from '../MovieModal/MovieModal';
+import Container from '@components/Container';
+import Menu from '@components/Menu';
+import MenuModal from '@components/MenuModal/MenuModal';
+import Gamburger from '@components/Gamburger';
+import MovieModal from '@components/MovieModal/MovieModal';
 
 import styles from './Header.module.scss';
 

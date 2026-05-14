@@ -6,7 +6,7 @@ import { formatRating } from '@/utils/formatRating';
 
 import styles from './MoviePreviewCard.module.scss';
 
-interface MoviePreviewCardProps extends Omit<Movie, 'id'> {
+interface MoviePreviewCardProps extends Omit<Movie, 'id' | 'genre' | 'actors'> {
   variant?: 'default' | 'medium';
 }
 

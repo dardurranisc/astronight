@@ -9,7 +9,7 @@ import { addMovie, updateMovie, deleteMovie } from '@/store/moviesSlice';
 import useField from '@/hooks/useField';
 import useImageUpload from '@/hooks/useImageUpload';
 
-import validateForm from '@utils/validateForm';
+import validateForm from '@/utils/validateForm';
 
 import { Movie } from '@/types/movie';
 

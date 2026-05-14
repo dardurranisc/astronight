@@ -1,6 +1,6 @@
-@import '@styles/variables';
-@import '@styles/breakpoints';
-@import '@styles/mixins/visual';
+@import '@/styles/variables';
+@import '@/styles/breakpoints';
+@import '@/styles/mixins/visual';
 
 .wrapper {
   position: relative;
@@ -29,8 +29,7 @@
   @include response('tablet-medium') {
     width: 8.61px;
     height: 8.86px;
-    top: 2.8px;
-    left: -15px;
+    left: -7px;
   }
 }
 
@@ -148,7 +147,11 @@
   width: 9px;
   height: 9.26px;
 
-  @include response('desktop') {
+  @include response('tablet') {
+    width: 10.61px;
+    height: 10.86px;
+    top: 50%;
+    left: -7px;
   }
 }
 

@@ -1,8 +1,8 @@
 import clsx from 'clsx';
 
-import Background from '@/components/common/Background';
-import Section from '@/components/common/Section';
-import Container from '@/components/common/Container';
+import Background from '@components/Background';
+import Section from '@components/Section';
+import Container from '@components/Container';
 
 import { aboutData } from '@/constants/aboutData';
 

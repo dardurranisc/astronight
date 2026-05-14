@@ -1,0 +1,31 @@
+@import '@/styles/mixins/visual';
+
+.confirmOverlay {
+  @include overlay(2000, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.basketBlock {
+  padding: 5px 9px;
+  width: 40px;
+  height: 40px;
+}
+
+.backet {
+  width: 100%;
+  height: 100%;
+}
+
+.buttons {
+  display: flex;
+  gap: 35px;
+}

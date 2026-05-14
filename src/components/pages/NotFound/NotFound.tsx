@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 
-import Background from '../Background';
-import Section from '../Section';
-import Container from '../Container';
-import Button from '../Button';
+import Background from '@components/Background';
+import Section from '@components/Section';
+import Container from '@components/Container';
+import Button from '@components/Button';
 
 import styles from './NotFound.module.scss';
 
@@ -26,7 +26,7 @@ const NotFound = () => {
           <div className={styles.block}>
             <h1>There{"'"}s nothing there...</h1>
             <span className={styles.span}>404</span>
-            <Button text=".go back." onClick={() => handleBack()} />
+            <Button text=".go back." onClick={handleBack} />
           </div>
         </Container>
       </Section>

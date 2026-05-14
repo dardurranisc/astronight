@@ -1,26 +1,23 @@
 import { useState } from 'react';
 
-import SectionTitle from '../SectionTitle';
-import MovieModal from '../MovieModal';
-import Button from '../Button';
+import SectionTitle from '@components/SectionTitle';
+import MovieModal from '@components/MovieModal';
+import Button from '@components/Button';
 
-import { HEADING } from '@/constants/headingData';
+import { heading } from '@/constants/headingData';
 
 const AddSomething = () => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   return (
     <>
-      <SectionTitle text={HEADING.ADD_SUGGESTION} />
+      <SectionTitle text={heading.addSuggestion} />
       <Button
         text=".yes."
         ariaLabel="Добавить фильм"
         onClick={() => setIsAddModalOpen(!isAddModalOpen)}
       />
-      <MovieModal
-        isOpen={isAddModalOpen}
-        onClose={() => setIsAddModalOpen(!isAddModalOpen)}
-      />
+      <MovieModal isOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(!isAddModalOpen)} />
     </>
   );
 };

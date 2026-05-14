@@ -2,11 +2,10 @@ import { useState } from 'react';
 // @ts-expect-error swiper
 import Rating from 'react-ratings-star';
 
-import useWindowWidth from '@/hooks/useWindowWidth';
-
 import { formatRating } from '@/utils/formatRating';
 
 import styles from './StarRating.module.scss';
+import useMatchMedia from '@/hooks/useMatchMedia';
 
 interface StarRatingProps {
   value: number | undefined;
@@ -16,8 +15,7 @@ interface StarRatingProps {
 const StarRating = ({ value, onChange }: StarRatingProps) => {
   const [rating, setRating] = useState(value);
 
-  const windowWidth = useWindowWidth();
-  const starSize = windowWidth && windowWidth <= 768 ? 17 : 20;
+  const starSize = useMatchMedia('768px') ? 17 : 20;
 
   const handleRatingChange = (newRating: number) => {
     setRating(newRating);

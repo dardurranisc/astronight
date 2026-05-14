@@ -2,12 +2,12 @@ import { useSelector } from 'react-redux';
 
 import { selectAllMovies } from '@/store/moviesSlice';
 
-import Section from '@/components/common/Section';
-import Container from '@/components/common/Container';
-import SectionTitle from '@/components/common/SectionTitle';
-import MoviesCarousel from '@/components/common/MoviesCarousel';
+import Section from '@components/Section';
+import Container from '@components/Container';
+import SectionTitle from '@components/SectionTitle';
+import MoviesCarousel from '@components/MoviesCarousel';
 
-import { HEADING } from '@/constants/headingData';
+import { heading } from '@/constants/headingData';
 
 import styles from './TopFilms.module.scss';
 
@@ -25,7 +25,7 @@ const TopFilms = () => {
       <Section>
         <Container>
           <div className={styles.main}>
-            <SectionTitle text={HEADING.TOP_FILMS} mobileLeft />
+            <SectionTitle text={heading.topFilms} mobileLeft />
             <MoviesCarousel movies={visibleMovies} />
           </div>
         </Container>

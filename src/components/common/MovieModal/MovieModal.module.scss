@@ -1,6 +1,6 @@
-@import '@styles/breakpoints';
-@import '@styles/variables';
-@import '@styles/mixins/visual';
+@import '@/styles/breakpoints';
+@import '@/styles/variables';
+@import '@/styles/mixins/visual';
 
 .overlay {
   @include overlay(1200, 0.8);

@@ -1,11 +1,15 @@
-@import '@styles/breakpoints';
-@import '@styles/mixins/visual';
+@import '@/styles/breakpoints';
+@import '@/styles/mixins/visual';
 
 .main {
   padding: 252px 63px;
 
   @include response('desktop') {
     padding: 169px 0;
+  }
+
+  @include response('tablet-medium') {
+    padding: 50px 0;
   }
 }
 

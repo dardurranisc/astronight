@@ -234,5 +234,5 @@ export const moviesTrendingData: Movie[] = [
     genre: ['sci-fi', 'comedy', 'drama'],
     description:
       "In 2019, following a world war triggered by the sudden destruction of Tokyo on July 16, 1988, Neo-Tokyo is plagued by corruption, anti-government protests, terrorism, and gang violence. During a violent rally, the hot-headed Shōtarō Kaneda leads his vigilante bōsōzoku gang, the Capsules, against the rival Clown gang. Kaneda's best friend, Tetsuo Shima, inadvertently crashes his motorcycle into Takashi, an esper who escaped from a government laboratory with the aid of a resistance organization. Assisted by fellow esper Masaru, Japan Self-Defense Forces Colonel Shikishima recaptures Takashi, has Tetsuo hospitalized, and arrests the Capsules. While being interrogated by the police, Kaneda meets Kei, an activist within the resistance movement, and tricks the authorities into releasingher with his gang",
-  }
+  },
 ];

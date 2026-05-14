@@ -19,7 +19,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={clsx(styles.button, styles[`${variant}`])}
+      className={clsx(styles.button, styles[variant])}
       onClick={onClick}
       aria-label={ariaLabel}
       type={type}

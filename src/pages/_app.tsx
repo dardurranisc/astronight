@@ -6,7 +6,7 @@ import { store } from '@/store';
 
 import useStoreInitialization from '@/hooks/useStoreInitialization';
 
-import Layout from '@/components/common/Layuot';
+import Layout from '@components/Layuot';
 
 import '@/styles/globals.scss';
 

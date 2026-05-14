@@ -6,7 +6,7 @@ export interface Movie {
   rating: number;
   year: number;
   director?: string;
-  genre?: string[];
-  actors?: string;
+  genre: string[];
+  actors: string;
   description?: string;
 }

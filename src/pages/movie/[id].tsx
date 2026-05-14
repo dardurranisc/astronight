@@ -7,11 +7,11 @@ import { RootState } from '@/store';
 
 import { selectAllMovies } from '@/store/moviesSlice';
 
-import MovieModal from '@/components/common/MovieModal';
-import Background from '@/components/common/Background';
-import Section from '@/components/common/Section';
-import Container from '@/components/common/Container';
-import AddSomething from '@/components/common/AddSomething';
+import MovieModal from '@components/MovieModal';
+import Background from '@components/Background';
+import Section from '@components/Section';
+import Container from '@components/Container';
+import AddSomething from '@components/AddSomething';
 
 import { formatRating } from '@/utils/formatRating';
 
@@ -46,7 +46,7 @@ const MoviePage = () => {
   }, [memoActors, isLimitActors, isOpen]);
 
   return (
-    <>
+    <div className={styles.content}>
       <Background src="/images/moviePage/background.png" alt="forest" fill priority fixed />
       <Section>
         <Container variant="secondary">
@@ -112,7 +112,7 @@ const MoviePage = () => {
           </div>
         </Container>
       </Section>
-    </>
+    </div>
   );
 };
 

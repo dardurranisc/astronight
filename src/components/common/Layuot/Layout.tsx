@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 
 import clsx from 'clsx';
 
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
 
 import styles from './Layout.module.scss';
 
@@ -17,11 +17,11 @@ const Layout = ({ children }: LayoutProps) => {
   const is404 = router.pathname === '/404';
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <Header variant={is404 ? 'transparent' : 'default'} />
       <main className={clsx(styles.main, is404 && styles.static)}>{children}</main>
       {!is404 && <Footer />}
-    </>
+    </div>
   );
 };
 

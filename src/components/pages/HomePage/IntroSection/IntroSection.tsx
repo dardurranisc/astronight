@@ -1,9 +1,9 @@
-import Background from '@/components/common/Background';
-import Section from '@components/common/Section';
-import Container from '@components/common/Container/Container';
-import SectionTitle from '@/components/common/SectionTitle';
+import Background from '@components/Background';
+import Section from '@components/Section';
+import Container from '@components/Container/Container';
+import SectionTitle from '@components/SectionTitle';
 
-import { HEADING } from '@/constants/headingData';
+import { heading } from '@/constants/headingData';
 import { paragraphsData } from './constants/paragraphsData';
 
 import styles from './IntroSection.module.scss';
@@ -20,7 +20,7 @@ const IntroSection = () => {
       />
       <Container>
         <div className={styles.main}>
-          <SectionTitle text={HEADING.INTRO} />
+          <SectionTitle text={heading.intro} />
           <div className={styles.blockParagraphs}>
             {paragraphsData.map((p) => (
               <p key={p.id}>{p.text}</p>

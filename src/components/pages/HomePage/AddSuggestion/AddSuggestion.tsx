@@ -1,7 +1,7 @@
-import Background from '@/components/common/Background';
-import Section from '@/components/common/Section';
-import Container from '@/components/common/Container';
-import AddSomething from '@/components/common/AddSomething';
+import Background from '@components/Background';
+import Section from '@components/Section';
+import Container from '@components/Container';
+import AddSomething from '@components/AddSomething';
 
 import styles from './AddSuggestion.module.scss';
 

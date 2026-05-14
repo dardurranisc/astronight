@@ -17,14 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@store/*": ["./src/store/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@types/*": ["./src/types/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@constants/*": ["./src/constants/*"],
-      "@pages/*": ["./src/pages/*"]
+      "@components/*": ["./src/components/common/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

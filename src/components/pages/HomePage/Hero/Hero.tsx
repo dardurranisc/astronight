@@ -6,12 +6,12 @@ import { useSelector } from 'react-redux';
 
 import { selectAllMovies } from '@/store/moviesSlice';
 
-import useColumns from '../../../hooks/useColumns';
+import useColumns from '@/hooks/useColumns';
 
-import Background from '@/components/common/Background';
-import Section from '@/components/common/Section';
-import Container from '@/components/common/Container';
-import MoviePreviewCard from '@/components/common/MoviePreviewCard';
+import Background from '@components/Background';
+import Section from '@components/Section';
+import Container from '@components/Container';
+import MoviePreviewCard from '@components/MoviePreviewCard';
 
 import styles from './Hero.module.scss';
 
@@ -20,12 +20,14 @@ const Hero = () => {
   const countColumns = useColumns();
   const rowsDefault = 2;
 
-  const [visibleRows, setVisibleRows] = useState(2);
+  const [visibleRows, setVisibleRows] = useState(rowsDefault);
+
+  const defaultRowsMovies = allMovies.slice(0, countColumns * rowsDefault);
+  const extraRowsMovies = allMovies.slice(countColumns * rowsDefault, countColumns * visibleRows);
 
   const visibleCountMovies = countColumns * visibleRows;
-  const visibleMovies = allMovies.slice(0, visibleCountMovies);
-  const remainingMovies = allMovies.length - visibleCountMovies;
 
+  const remainingMovies = allMovies.length - visibleCountMovies;
   const remainingRows = Math.ceil(remainingMovies / countColumns);
   const rowsToAdd = Math.min(rowsDefault, remainingRows);
 
@@ -35,7 +37,7 @@ const Hero = () => {
 
   return (
     <Section>
-      <div className={styles.hero}>
+      <div className={styles.heroTop}>
         <div className={styles.heroBackground}>
           <Background
             alt="Moon"
@@ -49,7 +51,7 @@ const Hero = () => {
           <div className={styles.main}>
             <h1 className={styles.title}>Trending Now</h1>
             <div className={styles.films}>
-              {visibleMovies.map((movie) => (
+              {defaultRowsMovies.map((movie) => (
                 <Link key={movie.id} href={`/movie/${movie.id}`} className={styles.link}>
                   <MoviePreviewCard
                     title={movie.title}
@@ -61,10 +63,30 @@ const Hero = () => {
                 </Link>
               ))}
             </div>
-            <button onClick={handleSeeMore} className={styles.button} aria-label="See more">
-              See more
-            </button>
           </div>
+        </Container>
+      </div>
+
+      <div className={styles.heroBottom}>
+        <Container>
+          {extraRowsMovies.length > 0 && (
+            <div className={styles.films}>
+              {extraRowsMovies.map((movie) => (
+                <Link key={movie.id} href={`/movie/${movie.id}`} className={styles.link}>
+                  <MoviePreviewCard
+                    title={movie.title}
+                    src={movie.src}
+                    alt={movie.alt}
+                    rating={movie.rating}
+                    year={movie.year}
+                  />
+                </Link>
+              ))}
+            </div>
+          )}
+          <button onClick={handleSeeMore} className={styles.button} aria-label="See more">
+            See more
+          </button>
         </Container>
       </div>
     </Section>

@@ -1,6 +1,6 @@
-@import '@styles/variables';
-@import '@styles/breakpoints';
-@import '@styles/mixins/visual';
+@import '@/styles/variables';
+@import '@/styles/breakpoints';
+@import '@/styles/mixins/visual';
 
 .footer {
   padding: 25px 0px;
@@ -47,6 +47,10 @@
 
 .footer p {
   line-height: 24px;
+
+  @include response('desktop') {
+    line-height: 22px;
+  }
 
   @include response('tablet-medium') {
     @include font-line(20px);

@@ -7,7 +7,7 @@ import type { Swiper as SwiperType } from 'swiper';
 
 import clsx from 'clsx';
 
-import FilmPreviewCard from '../MoviePreviewCard';
+import MoviePreviewCard from '@components/MoviePreviewCard';
 
 import { Movie } from '@/types/movie';
 
@@ -46,7 +46,7 @@ const MoviesCarousel = ({ movies }: MoviesCarouselProps) => {
           {movies.map((movie) => (
             <SwiperSlide key={movie.id}>
               <Link key={movie.id} href={`/movie/${movie.id}`} className={styles.link}>
-                <FilmPreviewCard
+                <MoviePreviewCard
                   title={movie.title}
                   src={movie.src}
                   alt={movie.alt}

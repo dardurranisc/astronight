@@ -1,4 +1,4 @@
-import NotFound from '@/components/common/NotFound/NotFound';
+import NotFound from '@/components/pages/NotFound';
 
 const NotFound404 = () => {
   return <NotFound />;
