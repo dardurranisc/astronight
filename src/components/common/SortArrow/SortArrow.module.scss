@@ -1,0 +1,53 @@
+@import '@/styles/variables';
+@import '@/styles/breakpoints';
+
+.arrowBtnTop,
+.arrowBtnBottom {
+  width: fit-content;
+  height: fit-content;
+}
+
+.arrowBtnTop {
+  margin-top: -10px;
+
+  @include response('tablet-medium') {
+    margin-top: -5px;
+    margin-right: 2px;
+  }
+}
+
+.arrowBtnBottom {
+  margin-top: 10px;
+  margin-left: -5px;
+  transform: rotate(180deg);
+
+  @include response('tablet-medium') {
+    margin-top: 4px;
+  }
+}
+
+.arrowMobile,
+.arrowDesktop {
+  stroke: $color-base;
+  opacity: 0.3;
+}
+
+.arrowDesktop {
+  width: 21px;
+  height: 27px;
+  stroke-width: 5;
+}
+
+.arrowMobile {
+  width: 16px;
+  height: 21px;
+  stroke-width: 3;
+}
+
+.arrowDisable svg {
+  opacity: 0.3;
+}
+
+.arrowActive {
+  opacity: 1;
+}

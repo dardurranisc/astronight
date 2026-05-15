@@ -31,69 +31,6 @@
   }
 }
 
-.arrowBtnTop,
-.arrowBtnBottom {
-  width: fit-content;
-  height: fit-content;
-}
-
-.arrowBtnTop {
-  margin-top: -10px;
-}
-
-.arrowBtnBottom {
-  margin-top: 16px;
-  margin-left: -2px;
-
-  @include response('tablet-medium') {
-    margin-top: 8px;
-  }
-}
-
-.arrowTop,
-.arrowBottom,
-.arrowTopMobile,
-.arrowBottomMobile {
-  stroke: $color-base;
-  opacity: 0.3;
-}
-
-.arrowTop,
-.arrowBottom {
-  width: 21px;
-  height: 27px;
-  stroke-width: 5;
-
-  @include response('tablet-medium') {
-    display: none;
-  }
-}
-
-.arrowTopMobile,
-.arrowBottomMobile {
-  display: none;
-  width: 16px;
-  height: 21px;
-  stroke-width: 3;
-
-  @include response('tablet-medium') {
-    display: block;
-  }
-}
-
-.arrowBottom,
-.arrowBottomMobile {
-  transform: rotate(180deg);
-}
-
-.arrowDisable svg {
-  opacity: 0.3;
-}
-
-.arrowActive {
-  opacity: 1;
-}
-
 .sort {
   position: relative;
   line-height: 0;
