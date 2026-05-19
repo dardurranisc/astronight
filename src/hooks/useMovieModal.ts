@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState} from 'react';
 
 import { useRouter } from 'next/router';
 
@@ -103,7 +103,6 @@ const useMovieModal = ({ initialMovie, onClose }: UseMovieModal) => {
       dispatch(addMovie(movie));
     }
 
-    resetForm();
     onClose();
   };
 

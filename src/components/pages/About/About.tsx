@@ -4,9 +4,9 @@ import Background from '@components/Background';
 import Section from '@components/Section';
 import Container from '@components/Container';
 
-import { aboutData } from '@/constants/aboutData';
+import { aboutData } from '@/components/pages/About/constants/aboutData';
 
-import styles from './about.module.scss';
+import styles from './About.module.scss';
 
 const About = () => {
   return (
