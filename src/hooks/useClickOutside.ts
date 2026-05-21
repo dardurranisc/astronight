@@ -14,7 +14,7 @@ const useClickOutside = (isOpen: boolean, onClose: () => void) => {
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen,onClose]);
+  }, [isOpen, onClose]);
 
   return refContainer;
 };

@@ -118,7 +118,6 @@
 .genresBlock {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
 
   @include response('tablet') {
     margin: 0 auto;

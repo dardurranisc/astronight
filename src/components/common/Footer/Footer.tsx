@@ -5,12 +5,12 @@ import Container from '../Container';
 import styles from './Footer.module.scss';
 
 interface FooterProps {
-  isGlobal?: boolean;
+  ref?: React.Ref<HTMLElement>;
 }
 
-const Footer = ({ isGlobal = true }: FooterProps) => {
+const Footer = ({ ref }: FooterProps) => {
   return (
-    <footer className={clsx(styles.footer, isGlobal && 'globalFooter')}>
+    <footer ref={ref} className={clsx(styles.footer)}>
       <Container>
         <div className={styles.copyright}>
           <p>.all rights reserved.</p>
