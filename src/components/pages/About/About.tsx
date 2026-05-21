@@ -4,7 +4,7 @@ import Background from '@components/Background';
 import Section from '@components/Section';
 import Container from '@components/Container';
 
-import { aboutData } from '@/components/pages/About/constants/aboutData';
+import { aboutData } from './constants/aboutData';
 
 import styles from './About.module.scss';
 
