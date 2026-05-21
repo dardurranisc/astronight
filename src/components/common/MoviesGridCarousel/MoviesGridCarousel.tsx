@@ -18,6 +18,7 @@ const MoviesGridCarousel = ({ sortedMovies }: MoviesGridCarouselProps) => {
     <div className={styles.movies}>
       <Swiper
         modules={[Grid, Pagination]}
+        speed={200}
         slidesPerView={2}
         slidesPerGroup={2}
         spaceBetween={15}
