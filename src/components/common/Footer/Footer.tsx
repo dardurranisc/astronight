@@ -1,10 +1,16 @@
+import clsx from 'clsx';
+
 import Container from '../Container';
 
 import styles from './Footer.module.scss';
 
-const Footer = () => {
+interface FooterProps {
+  ref?: React.Ref<HTMLElement>;
+}
+
+const Footer = ({ ref }: FooterProps) => {
   return (
-    <footer className={styles.footer}>
+    <footer ref={ref} className={clsx(styles.footer)}>
       <Container>
         <div className={styles.copyright}>
           <p>.all rights reserved.</p>

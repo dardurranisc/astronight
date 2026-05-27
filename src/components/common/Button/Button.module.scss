@@ -8,13 +8,6 @@
   @include font-line(25px);
   font-weight: 700;
   border-radius: 70px;
-}
-
-.default {
-  border-radius: 60px;
-  color: $maron;
-  background-color: $color-base;
-  outline: 2px solid $color-base;
 
   @include response('desktop') {
     padding: 14px 28px;
@@ -25,6 +18,13 @@
     @include font-line(14px);
     padding: 8px 12px;
   }
+}
+
+.default {
+  border-radius: 60px;
+  color: $maron;
+  background-color: $color-base;
+  outline: 2px solid $color-base;
 
   &:hover {
     color: $color-base;
@@ -69,5 +69,26 @@
     color: $color-base;
     background-color: transparent;
     outline-color: $color-base;
+  }
+}
+
+.filter {
+  background-color: transparent;
+  outline: 2px solid $color-base;
+
+  &:hover {
+    background-color: $color-base-opacity-20;
+    outline-color: $color-base;
+  }
+}
+
+.filterActive {
+  color: $maron;
+  background-color: $color-base;
+  outline-color: $color-base;
+
+  &:hover {
+    background-color: $color-base;
+    color: $maron-opacity-50;
   }
 }

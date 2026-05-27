@@ -2,10 +2,14 @@
 @import '@/styles/breakpoints';
 @import '@/styles/mixins/visual';
 
+.globalFooter {
+  background-color: $dark-sky-bg;
+}
+
 .footer {
   padding: 25px 0px;
   color: $color-secondary;
-  background-color: $dark-sky-bg;
+  background-color: transparent;
 
   @include response('desktop') {
     padding: 20px 0;

@@ -3,6 +3,8 @@
 @import './mixins/visual';
 
 @import 'swiper/css';
+@import 'swiper/css/grid';
+@import 'swiper/css/pagination';
 
 * {
   margin: 0;
@@ -32,6 +34,10 @@ button {
   border: none;
   background: inherit;
   color: inherit;
+}
+
+li,
+button {
   @include cursor;
 }
 
@@ -52,12 +58,15 @@ h1 {
 h3 {
   font-family: 'Alata';
   font-weight: 400;
-  font-size: 40px;
-  line-height: 40px;
+  @include font-line(40px);
   letter-spacing: 0px;
 
   @include response('desktop') {
-    font-size: 20px;
-    line-height: 20px;
+    @include font-line(20px);
   }
+}
+
+h4 {
+  font-family: 'Alata';
+  font-weight: 400;
 }

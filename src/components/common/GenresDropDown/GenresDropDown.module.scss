@@ -17,6 +17,7 @@
 }
 
 .selectDown {
+  max-height: 450px;
   border: 2px solid;
   @include border-radius-base;
   margin-top: 50px;
@@ -33,6 +34,8 @@
   padding: 0px 10px;
   color: $maron;
   border-color: $color-base;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .selectLists {

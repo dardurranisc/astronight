@@ -5,6 +5,10 @@
 .wrapper {
   position: relative;
   aspect-ratio: 7 / 10;
+
+  @include response('tablet-medium') {
+    aspect-ratio: 7.0212766 / 10;
+  }
 }
 
 .card {
@@ -24,6 +28,11 @@
     left: -0.9765625vw;
     width: 0.87890625vw;
     height: 0.904296875vw;
+  }
+
+  @include response('tablet') {
+    width: 1.12109375vw;
+    height: 1.153645833333333vw;
   }
 
   @include response('tablet-medium') {
@@ -48,6 +57,10 @@
     @include font-line(1.7578125vw);
   }
 
+  @include response('tablet') {
+    @include font-line(1.953125vw);
+  }
+
   @include response('tablet-medium') {
     right: 10.59px;
     bottom: 10.4px;
@@ -61,8 +74,13 @@
   color: $white;
 
   @include response('desktop') {
-    margin-top: 1.4648vw;
-    @include font-line(1.9531vw);
+    margin-top: 1.46484375vw;
+    @include font-line(1.953125vw);
+  }
+
+  @include response('tablet') {
+    margin-top: 1.5625vw;
+    @include font-line(2.34375vw);
   }
 
   @include response('tablet-medium') {
