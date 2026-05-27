@@ -181,3 +181,32 @@
     @include font-line(12px);
   }
 }
+
+.smallCard {
+  max-width: 165px;
+  flex: 1 0 0;
+}
+
+.smallCard .cardName {
+  margin-top: 12px;
+  @include font-line(18px);
+}
+
+.smallCard .cardRating {
+  bottom: 11.4px;
+  right: 10.59px;
+  @include font-line(15px);
+}
+
+.smallCard .cardRating .star {
+  top: 50%;
+  left: -7px;
+  transform: translate(-100%, -50%);
+  width: 8.61px;
+  height: 8.86px;
+}
+
+.smallCard .cardYear {
+  margin-top: 6px;
+  @include font-line(12px);
+}

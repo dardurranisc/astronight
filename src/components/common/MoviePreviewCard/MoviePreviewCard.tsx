@@ -6,7 +6,7 @@ import { Movie } from '@/types/movie';
 import styles from './MoviePreviewCard.module.scss';
 
 interface MoviePreviewCardProps extends Omit<Movie, 'id' | 'genre' | 'actors'> {
-  variant?: 'default' | 'medium';
+  variant?: 'default' | 'medium' | 'small';
 }
 
 const MoviePreviewCard = ({

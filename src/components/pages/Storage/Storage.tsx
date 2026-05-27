@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+
 import { useState, useMemo } from 'react';
 
 import { useSelector } from 'react-redux';
@@ -23,7 +25,18 @@ const Storage = () => {
   const [sortField, setSortField] = useState<SortField>('');
   const [sortingCase, setSortingCase] = useState<SortCase>('up');
   const allMovies = useSelector(selectAllMovies);
-  const sortedMovies = useFilteredMovies(allMovies, selectedFilters, sortField, sortingCase);
+  const router = useRouter();
+  const searchValue = router.query.search;
+  const isSearchActive = Boolean(searchValue);
+  const sortedMovies = useFilteredMovies(
+    allMovies,
+    searchValue,
+    selectedFilters,
+    sortField,
+    sortingCase
+  );
+
+  console.log(searchValue);
 
   const countSelectedFilters = selectedFilters.length;
   const countAllMovies = allMovies.length;
@@ -42,9 +55,11 @@ const Storage = () => {
       return 'No objects match those filters.';
     }
 
-    const totalCount = hasFilters ? countSortedMovies : countAllMovies;
-    return `${totalCount} objects found`;
-  }, [countSelectedFilters, countSortedMovies, countAllMovies]);
+    const totalCount = hasFilters || isSearchActive ? countSortedMovies : countAllMovies;
+    const searchCase = isSearchActive ? `for "${searchValue}"` : '';
+
+    return `${totalCount} objects found ${searchCase}`;
+  }, [isSearchActive, searchValue, countSelectedFilters, countSortedMovies, countAllMovies]);
 
   const isEmpty = sortedMovies.length === 0;
 

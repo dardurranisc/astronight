@@ -12,6 +12,7 @@ import Gamburger from '@components/Gamburger';
 import MovieModal from '@components/MovieModal/MovieModal';
 
 import styles from './Header.module.scss';
+import SearchModal from '../SearchModal';
 
 interface HeaderProps {
   variant?: 'default' | 'transparent';
@@ -20,6 +21,7 @@ interface HeaderProps {
 const Header = ({ variant = 'default' }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
 
   const headerRef = useRef<HTMLElement>(null);
 
@@ -39,10 +41,22 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
     }
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen || isSearchModalOpen) {
+      document.body.classList.add('header-fixed');
+    } else {
+      document.body.classList.remove('header-fixed');
+    }
+  }, [isMenuOpen, isSearchModalOpen]);
+
   return (
     <header
       ref={headerRef}
-      className={clsx(styles.header, isMenuOpen && styles.fixed, styles[variant])}
+      className={clsx(
+        styles.header,
+        (isMenuOpen || isSearchModalOpen) && styles.fixed,
+        styles[variant]
+      )}
     >
       <Container variant="secondary">
         <div className={styles.headerInner}>
@@ -52,12 +66,19 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
             ariaLabel="Открыть меню"
           />
           <MenuModal isMenuOpen={isMenuOpen} onClose={() => setIsMenuOpen(!isMenuOpen)}>
-            <Menu variant="mobile" />
+            <Menu
+              variant="mobile"
+              onClickSearch={() => setIsSearchModalOpen(true)}
+              isSearchModalOpen={isSearchModalOpen}
+            />
           </MenuModal>
           <Link href="/" className={styles.logo}>
             <Image src="/images/logo/logo.svg" width={120} height={74} alt="AstroNight" />
           </Link>
-          <Menu />
+          <Menu
+            onClickSearch={() => setIsSearchModalOpen(true)}
+            isSearchModalOpen={isSearchModalOpen}
+          />
           <button
             className={styles.buttonAdd}
             onClick={() => setIsAddModalOpen(!isAddModalOpen)}
@@ -66,6 +87,7 @@ const Header = ({ variant = 'default' }: HeaderProps) => {
             add
           </button>
           <MovieModal isOpen={isAddModalOpen} onClose={() => setIsAddModalOpen(!isAddModalOpen)} />
+          {isSearchModalOpen && <SearchModal onClose={() => setIsSearchModalOpen(false)} />}
         </div>
       </Container>
     </header>

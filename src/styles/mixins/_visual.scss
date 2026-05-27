@@ -94,15 +94,14 @@
   }
 }
 
-@mixin overlay($z-index: 1000, $opacity: 0.9) {
+@mixin overlay($z-index: 1000, $opacity-bg: 0.9) {
   position: fixed;
   z-index: $z-index;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $dark-sky-bg;
-  opacity: $opacity;
+  background-color: rgba($dark-sky-bg, $opacity-bg);
 }
 
 @mixin close-btn($size: 30px, $line-height: 2px) {
