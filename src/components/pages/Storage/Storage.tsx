@@ -26,7 +26,7 @@ const Storage = () => {
   const [sortingCase, setSortingCase] = useState<SortCase>('up');
   const allMovies = useSelector(selectAllMovies);
   const router = useRouter();
-  const searchValue = router.query.search;
+  const searchValue = (router.query.search || "") as string;
   const isSearchActive = Boolean(searchValue);
   const sortedMovies = useFilteredMovies(
     allMovies,
@@ -35,8 +35,6 @@ const Storage = () => {
     sortField,
     sortingCase
   );
-
-  console.log(searchValue);
 
   const countSelectedFilters = selectedFilters.length;
   const countAllMovies = allMovies.length;

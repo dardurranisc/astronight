@@ -39,12 +39,8 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
   const searchFiltering = (searchValue: string) => {
-    if (searchValue === '') {
+    if (!searchValue) {
       setFilteredMovies([]);
       return;
     }
@@ -55,7 +51,7 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
   };
 
   const handleClearSearch = () => {
-    if (searchValue === '') {
+    if (!searchValue) {
       onClose();
     } else {
       setSearchValue('');
@@ -86,7 +82,11 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
         <div className={styles.wrapper} ref={wrapperRef}>
           <div className={styles.search}>
             <input
-              ref={inputRef}
+              ref={(inputRef) => {
+                if(inputRef) {
+                  inputRef.focus();
+                }
+              }}
               value={searchValue}
               className={styles.input}
               type="text"
@@ -120,8 +120,7 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
                 </div>
               </div>
               <div className={styles.movies}>
-                {filteredMovies &&
-                  filteredMovies.slice(0, maxMoviesForView).map((movie) => (
+                {filteredMovies.slice(0, maxMoviesForView).map((movie) => (
                     <Link key={movie.id} href={`/movie/${movie.id}`} onClick={onClose}>
                       <MoviePreviewCard
                         variant="small"
@@ -139,7 +138,7 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
               </button>
             </div>
           )}
-          {filteredMovies?.length === 0 && searchValue !== '' && (
+          {filteredMovies.length === 0 && searchValue && (
             <div className={styles.resultEmpty}>
               <p>No results could be found. Please try again with a different query.</p>
             </div>

@@ -7,7 +7,7 @@ import { SortField, SortCase } from '@/types/sorting';
 
 const useFilteredMovies = (
   allMovies: Movie[],
-  searchValue: string | string[] | undefined,
+  searchValue: string,
   selectedFilters: string[],
   sortField: SortField,
   sortingCase: SortCase
@@ -19,7 +19,6 @@ const useFilteredMovies = (
       current = current.filter((movie) =>
         movie.title.toLowerCase().includes((searchValue as string).toLowerCase())
       );
-      console.log(searchValue);
     }
 
     if (selectedFilters.length) {
