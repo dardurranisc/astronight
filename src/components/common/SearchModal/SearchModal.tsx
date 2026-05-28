@@ -136,7 +136,7 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
               </button>
             </div>
           )}
-          {filteredMovies.length === 0 && searchValue && (
+          {filteredMovies.length === 0 && Boolean(searchValue) && (
             <div className={styles.resultEmpty}>
               <p>No results could be found. Please try again with a different query.</p>
             </div>
