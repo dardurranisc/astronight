@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useSelector } from 'react-redux';
 
@@ -36,8 +36,6 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
 
   const isDesktop = useMatchMedia('1024px');
   const maxMoviesForView = isDesktop ? 3 : 5;
-
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const searchFiltering = (searchValue: string) => {
     if (!searchValue) {
