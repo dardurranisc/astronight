@@ -3,7 +3,6 @@
 @import '@/styles/mixins/visual';
 
 .button {
-  font-family: 'Anonymous Pro';
   padding: 19px 32px;
   @include font-line(25px);
   font-weight: 700;

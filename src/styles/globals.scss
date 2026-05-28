@@ -41,6 +41,10 @@ button {
   @include cursor;
 }
 
+button {
+  font-family: 'Anonymous Pro';
+}
+
 button,
 button::after,
 button::before,
@@ -69,4 +73,14 @@ h3 {
 h4 {
   font-family: 'Alata';
   font-weight: 400;
+}
+
+/* Global Styles for body with class header-fixed (With open modal)*/
+
+.header-fixed {
+  overflow: hidden;
+}
+
+.header-fixed main {
+  padding-top: var(--header-height);
 }

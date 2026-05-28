@@ -7,12 +7,19 @@ import { SortField, SortCase } from '@/types/sorting';
 
 const useFilteredMovies = (
   allMovies: Movie[],
+  searchValue: string,
   selectedFilters: string[],
   sortField: SortField,
   sortingCase: SortCase
 ): Movie[] => {
   return useMemo(() => {
     let current = allMovies;
+
+    if (searchValue) {
+      current = current.filter((movie) =>
+        movie.title.toLowerCase().includes((searchValue as string).toLowerCase())
+      );
+    }
 
     if (selectedFilters.length) {
       current = current.filter((movie) =>
@@ -27,7 +34,7 @@ const useFilteredMovies = (
     }
 
     return sorted;
-  }, [allMovies, selectedFilters, sortField, sortingCase]);
+  }, [allMovies, searchValue, selectedFilters, sortField, sortingCase]);
 };
 
 export default useFilteredMovies;
