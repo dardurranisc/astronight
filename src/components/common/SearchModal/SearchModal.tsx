@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useSelector } from 'react-redux';
 
@@ -81,7 +81,7 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
           <div className={styles.search}>
             <input
               ref={(inputRef) => {
-                if(inputRef) {
+                if (inputRef) {
                   inputRef.focus();
                 }
               }}
@@ -119,26 +119,21 @@ const SearchModal = ({ onClose }: SearchModalProps) => {
               </div>
               <div className={styles.movies}>
                 {filteredMovies.slice(0, maxMoviesForView).map((movie) => (
-                    <Link key={movie.id} href={`/movie/${movie.id}`} onClick={onClose}>
-                      <MoviePreviewCard
-                        variant="small"
-                        title={movie.title}
-                        src={movie.src}
-                        alt={movie.alt}
-                        rating={movie.rating}
-                        year={movie.year}
-                      />
-                    </Link>
-                  ))}
+                  <Link key={movie.id} href={`/movie/${movie.id}`} onClick={onClose}>
+                    <MoviePreviewCard
+                      variant="small"
+                      title={movie.title}
+                      src={movie.src}
+                      alt={movie.alt}
+                      rating={movie.rating}
+                      year={movie.year}
+                    />
+                  </Link>
+                ))}
               </div>
               <button className={styles.viewBtn} onClick={handleViewAll}>
                 View all results
               </button>
-            </div>
-          )}
-          {filteredMovies.length === 0 && Boolean(searchValue) && (
-            <div className={styles.resultEmpty}>
-              <p>No results could be found. Please try again with a different query.</p>
             </div>
           )}
         </div>

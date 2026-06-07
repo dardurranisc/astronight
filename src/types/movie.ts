@@ -1,5 +1,6 @@
 export type Movie = {
   id: number;
+  extraId?: number;
   title: string;
   src: string;
   alt: string;

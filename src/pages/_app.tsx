@@ -4,20 +4,20 @@ import { Provider } from 'react-redux';
 
 import { store } from '@/store';
 
-import useStoreInitialization from '@/hooks/useStoreInitialization';
+import AppInitializer from '@/components/common/AppInitializer';
 
 import Layout from '@components/Layuot';
 
 import '@/styles/globals.scss';
 
 export default function App({ Component, pageProps }: AppProps) {
-  useStoreInitialization();
-
   return (
     <Provider store={store}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <AppInitializer>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AppInitializer>
     </Provider>
   );
 }

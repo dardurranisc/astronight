@@ -26,7 +26,7 @@ const Storage = () => {
   const [sortingCase, setSortingCase] = useState<SortCase>('up');
   const allMovies = useSelector(selectAllMovies);
   const router = useRouter();
-  const searchValue = (router.query.search || "") as string;
+  const searchValue = (router.query.search || '') as string;
   const isSearchActive = Boolean(searchValue);
   const sortedMovies = useFilteredMovies(
     allMovies,

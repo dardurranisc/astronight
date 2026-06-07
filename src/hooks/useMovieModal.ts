@@ -4,8 +4,6 @@ import { useRouter } from 'next/router';
 
 import { useDispatch } from 'react-redux';
 
-import { addMovie, updateMovie, deleteMovie } from '@/store/moviesSlice';
-
 import useField from '@/hooks/useField';
 import useImageUpload from '@/hooks/useImageUpload';
 
@@ -84,6 +82,7 @@ const useMovieModal = ({ initialMovie, onClose }: UseMovieModal) => {
     if (!isFormValid()) return;
 
     const movieInformation: Omit<Movie, 'id'> = {
+      extraId: Date.now(),
       title: title.field,
       src: srcImage.field,
       alt: title.field,
@@ -97,10 +96,10 @@ const useMovieModal = ({ initialMovie, onClose }: UseMovieModal) => {
 
     if (isEdit) {
       const movie = { ...movieInformation, id: initialMovie.id };
-      dispatch(updateMovie(movie));
+      dispatch({ type: 'updateMovieRequest', payload: movie });
     } else {
-      const movie = { ...movieInformation, id: Date.now() };
-      dispatch(addMovie(movie));
+      const movie = movieInformation;
+      dispatch({ type: 'addMovieRequest', payload: movie });
     }
 
     resetForm();
@@ -109,7 +108,7 @@ const useMovieModal = ({ initialMovie, onClose }: UseMovieModal) => {
 
   const handleDeleteMovie = () => {
     if (initialMovie) {
-      dispatch(deleteMovie(initialMovie.id));
+      dispatch({ type: 'deleteMovieRequest', payload: initialMovie.id });
     }
     onClose();
     router.replace('/');
